@@ -1,0 +1,46 @@
+# --- Xcode ---
+# 빌드 부산물 및 인덱스 파일 (자동 생성됨)
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# 사용자별 Xcode 설정 (브레이크포인트, 창 배치 등 개인적인 설정)
+*.xcuserdata
+*.xcuserdatad
+*.xccheckout
+*.moved-aside
+
+# Playgrounds (필요에 따라 주석 해제)
+# timeline.xctimeline
+# playground.xcworkspace
+
+# --- Swift Package Manager ---
+# SPM 빌드 폴더 및 설정
+.build/
+.swiftpm/
+Packages/
+
+# --- CocoaPods (사용하는 경우) ---
+# 라이브러리 소스 코드는 보통 제외하고 Podfile.lock만 커밋함
+Pods/
+# 만약 Pods를 포함시키지 않는다면 .xcworkspace는 커밋해야 함
+
+# --- Carthage (사용하는 경우) ---
+Carthage/Build
+
+# --- macOS System ---
+# 파인더(Finder) 설정 파일
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- 기타 ---
+# fastlane (필요한 경우 비밀번호 파일 제외)
+fastlane/report.xml
+fastlane/screenshots
+
+# Xcode Patch data
+*.xcuserstate
