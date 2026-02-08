@@ -10,7 +10,7 @@ struct NoteRowView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
-                Text(item.title.isEmpty ? "Untitled" : item.title)
+                Text(item.title.isEmpty ? "제목 없음" : item.title)
                     .font(.headline)
                     .lineLimit(1)
 

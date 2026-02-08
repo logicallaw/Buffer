@@ -14,7 +14,7 @@ struct ContentView: View {
             if let selectedItem {
                 EditorView(item: selectedItem)
             } else {
-                Text("Select or create a note")
+                Text("메모를 선택하거나 새로 만드세요")
                     .font(.title3)
                     .foregroundStyle(.tertiary)
             }

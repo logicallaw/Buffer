@@ -1,17 +1,13 @@
-//
-//  bufferTests.swift
-//  bufferTests
-//
-//  Created by 김준호 on 2/6/26.
-//
-
 import Testing
 @testable import buffer
 
+// MARK: - bufferApp 기본 검증
+
 struct bufferTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func bufferCategory_is_importable() {
+        // @testable import buffer가 정상 작동하는지 확인
+        let category = BufferCategory.notes
+        #expect(category.rawValue == "notes")
     }
-
 }

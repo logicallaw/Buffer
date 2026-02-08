@@ -8,10 +8,11 @@ struct NoteListView: View {
     let category: BufferCategory
 
     private var filteredItems: [BufferItem] {
+        let topLevel = allItems.filter { $0.parentItem == nil }
         if category == .all {
-            return allItems
+            return topLevel
         }
-        return allItems.filter { $0.category == category }
+        return topLevel.filter { $0.category == category }
     }
 
     var body: some View {
@@ -27,7 +28,7 @@ struct NoteListView: View {
         .toolbar {
             ToolbarItem {
                 Button(action: createNewNote) {
-                    Label("New Note", systemImage: "plus")
+                    Label("새 메모", systemImage: "plus")
                 }
                 .keyboardShortcut("n", modifiers: .command)
             }

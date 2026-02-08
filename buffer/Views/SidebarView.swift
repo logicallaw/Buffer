@@ -14,7 +14,7 @@ struct SidebarView: View {
 
     var body: some View {
         List(selection: $selectedCategory) {
-            Section("Categories") {
+            Section("카테고리") {
                 ForEach(BufferCategory.allCases) { category in
                     Label {
                         HStack {

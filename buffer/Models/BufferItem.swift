@@ -12,11 +12,11 @@ enum BufferCategory: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .all: return "All"
-        case .notes: return "Notes"
-        case .links: return "Links"
-        case .files: return "Files"
-        case .images: return "Images"
+        case .all: return "전체"
+        case .notes: return "메모"
+        case .links: return "링크"
+        case .files: return "파일"
+        case .images: return "이미지"
         }
     }
 
@@ -40,6 +40,11 @@ final class BufferItem {
     var updatedAt: Date
     var isPinned: Bool
 
+    // Sub-page support
+    var parentItem: BufferItem?
+    @Relationship(deleteRule: .cascade, inverse: \BufferItem.parentItem)
+    var childItems: [BufferItem]?
+
     // Link-specific
     var url: String?
     var linkTitle: String?
@@ -57,7 +62,8 @@ final class BufferItem {
         title: String = "",
         content: String = "",
         category: BufferCategory = .notes,
-        isPinned: Bool = false
+        isPinned: Bool = false,
+        parentItem: BufferItem? = nil
     ) {
         self.title = title
         self.content = content
@@ -65,5 +71,6 @@ final class BufferItem {
         self.createdAt = Date()
         self.updatedAt = Date()
         self.isPinned = isPinned
+        self.parentItem = parentItem
     }
 }
